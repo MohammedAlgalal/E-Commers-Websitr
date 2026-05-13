@@ -1,0 +1,8 @@
+{
+  "name": "Eiman Elegance",
+  "description": "A luxury e-commerce fashion store featuring modern collections for women, men, and children.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

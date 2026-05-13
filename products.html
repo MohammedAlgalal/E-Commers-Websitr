@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eiman Elegance | Products</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .filter-section {
+            margin-bottom: 50px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .search-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-wrapper input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            border-radius: 30px;
+            border: 2px solid #eee;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        
+        .search-wrapper input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.1);
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        /* Tabs Styling */
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding-bottom: 10px;
+        }
+        
+        .tab-btn {
+            padding: 10px 25px;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            color: #555;
+        }
+        
+        .tab-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+        
+        .tab-btn.active {
+            background: var(--gold);
+            color: white;
+            border-color: var(--gold);
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .category-tabs {
+                justify-content: flex-start;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 15px;
+                -webkit-overflow-scrolling: touch;
+            }
+            .category-tabs::-webkit-scrollbar {
+                height: 3px;
+            }
+            .category-tabs::-webkit-scrollbar-thumb {
+                background: #eee;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Eiman <span>Elegance</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="offers.html">Offers</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="team.html">Team Members</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 50px;">
+        <div class="section-header">
+            <h2>Our Featured Collection</h2>
+            <p>Quality and style in every single piece</p>
+        </div>
+
+        <div class="filter-section scroll-animate">
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="Search for products...">
+                <span class="search-icon">🔍</span>
+            </div>
+            
+            <div class="category-tabs" id="tabBar">
+                <button class="tab-btn active" data-filter="all">All Items</button>
+                <button class="tab-btn" data-filter="women">Women</button>
+                <button class="tab-btn" data-filter="men">Men</button>
+                <button class="tab-btn" data-filter="kids">Kids</button>
+                <button class="tab-btn" data-filter="perfumes">Perfumes</button>
+                <button class="tab-btn" data-filter="watches">Watches</button>
+                <button class="tab-btn" data-filter="shoes">Shoes</button>
+                <button class="tab-btn" data-filter="accessories">Accessories</button>
+            </div>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <!-- Men's Products -->
+            <div class="product-card" data-category="men">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=2040&auto=format&fit=crop" alt="Men Shirt" referrerPolicy="no-referrer">
+                    <div class="product-overlay">
+                        <button class="btn btn-primary view-details-btn">View More</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Classic Formal Shirt</h3>
+                    <p class="product-price">$65.00</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p class="product-desc" style="display: none;">A timeless piece for the modern gentleman. Crafted from 100% premium Egyptian cotton for maximum comfort and crisp look.</p>
+                    <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 15px;">Add To Cart</button>
+                </div>
+            </div>
+
+            <!-- Women's Products -->
+            <div class="product-card" data-category="women">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1506152983158-b4a74a01c721?q=80&w=2073&auto=format&fit=crop" alt="Women Outfit" referrerPolicy="no-referrer">
+                    <div class="product-overlay">
+                        <button class="btn btn-primary view-details-btn">View More</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Elegant Modest Set</h3>
+                    <p class="product-price">$140.00</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p class="product-desc" style="display: none;">Sophistication meets modesty. This silk-blend set offers a graceful silhouette suitable for any high-end occasion.</p>
+                    <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 15px;">Add To Cart</button>
+                </div>
+            </div>
+
+            <!-- Kids -->
+            <div class="product-card" data-category="kids">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?q=80&w=1972&auto=format&fit=crop" alt="Kids Clothes" referrerPolicy="no-referrer">
+                    <div class="product-overlay">
+                        <button class="btn btn-primary view-details-btn">View More</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Cotton Toddler Set</h3>
+                    <p class="product-price">$35.00</p>
+                    <p class="rating">⭐⭐⭐⭐</p>
+                    <p class="product-desc" style="display: none;">Soft, breathable, and playful. Made with organic cotton, ensuring your little ones stay comfortable all day long.</p>
+                    <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 15px;">Add To Cart</button>
+                </div>
+            </div>
+
+            <!-- Perfumes -->
+            <div class="product-card" data-category="perfumes">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1976&auto=format&fit=crop" alt="Perfume" referrerPolicy="no-referrer">
+                    <div class="product-overlay">
+                        <button class="btn btn-primary view-details-btn">View More</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Golden Amber Perfume</h3>
+                    <p class="product-price">$95.00</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p class="product-desc" style="display: none;">A scent that lingers with luxury. Infused with oud, amber, and vanilla for a deep, warm, and captivating aroma.</p>
+                    <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 15px;">Add To Cart</button>
+                </div>
+            </div>
+
+            <!-- Watches -->
+            <div class="product-card" data-category="watches">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1976&auto=format&fit=crop" alt="Silver Watch">
+                    <div class="product-overlay">
+                        <button class="btn btn-primary view-details-btn">View More</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Silver Classic Watch</h3>
+                    <p class="product-price">$210.00</p>
+                    <p class="rating">⭐⭐⭐⭐⭐</p>
+                    <p class="product-desc" style="display: none;">Precision engineering and luxury design. Featuring a stainless steel strap and scratch-resistant sapphire crystal.</p>
+                    <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 15px;">Add To Cart</button>
+                </div>
+            </div>
+
+            <!-- Shoes -->
+            <div class="product-card" data-category="shoes">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=2012&auto=format&fit=crop" alt="Brown Shoes">
+                    <div class="product-overlay">
+                        <button class="btn btn-primary view-details-btn">View More</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Classic Brown Boots</h3>
+                    <p class="product-price">$95.00</p>
+                    <p class="rating">⭐⭐⭐⭐</p>
+                    <p class="product-desc" style="display: none;">Handcrafted Italian leather boots. Designed for durability without sacrificing an ounce of elegance.</p>
+                    <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-top: 15px;">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-img">
+                    <img id="modalImg" src="" alt="Product">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalName">Product Name</h2>
+                    <p class="modal-price" id="modalPrice">$0.00</p>
+                    <div class="modal-rating" id="modalRating">⭐⭐⭐⭐⭐</div>
+                    <div class="modal-desc">
+                        <h3>Description</h3>
+                        <p id="modalDesc">Product description goes here.</p>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary add-to-cart-btn" style="width: 100%;">Add To Cart</button>
+                        <button class="btn" style="width: 100%; margin-top: 10px; border: 1px solid #ddd;" onclick="document.getElementById('productModal').style.display='none'">Back to Shopping</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Eiman Elegance</h3>
+                    <p>Where elegance begins. We provide the finest fashion and luxury items for those who appreciate true style.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="offers.html">Offers</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="team.html">Team Members</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📍 123 Elegance St, Fashion City</p>
+                    <p>📞 +1 234 567 890</p>
+                    <p>✉️ info@eimanelegance.com</p>
+                    <p id="dateTimeDisplay" style="color: var(--gold); margin-top: 10px;"></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eiman Elegance. All rights reserved. CIT1251 Final Project.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
